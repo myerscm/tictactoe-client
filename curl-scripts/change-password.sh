@@ -1,4 +1,4 @@
-curl "http://tic-tac-toe.wdibos.com/change-password/:id" \
+curl "http://tic-tac-toe.wdibos.com/change-password/${ID}" \
   --include \
   --request PATCH \
   --header "Content-Type: application/json" \

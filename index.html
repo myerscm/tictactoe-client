@@ -1,17 +1,101 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Browser Template</h1>
-    </body>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>CRISS CROSS</h1>
+  </header>
+  <!-- modal code begin -->
+  <!-- Large modal -->
+  <!-- Large modal -->
+  <section>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+
+          <form id="sign-up" class="border">
+            <fieldset>
+              <legend>Sign up!</legend>
+              <input type="text" name="credentials[email]" placeholder="Email">
+              <input type="password" name="credentials[password]" placeholder="Password">
+              <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+              <input type="submit" value="Sign up!">
+            </fieldset>
+
+          </form>
+          <div class="form-group">
+
+            <form id="sign-in" class="border">
+              <fieldset>
+                <legend>Sign in!</legend>
+                <input type="text" name="credentials[email]" placeholder="Email">
+                <input type="password" name="credentials[password]" placeholder="Password">
+                <input type="submit" value="Sign in!">
+              </fieldset>
+
+            </form>
+
+          </div>
+          <div class="form-group">
+
+            <form id="change-password" class="border">
+              <fieldset>
+                <legend>Change Password!</legend>
+                <input type="password" name="passwords[old]" placeholder="Old Password">
+                <input type="password" name="passwords[new]" placeholder="New Password">
+                <input type="submit" value="Change Password!">
+              </fieldset>
+
+            </form>
+
+          </div>
+          <div class="form-group">
+
+            <form id="sign-out" class="border">
+              <fieldset>
+                <legend>Sign Out</legend>
+                <input type="submit" value="Sign Out">
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+      </div>
+    <!-- modal top code end -->
+
+
+
+    <!-- end of auth -->
+  </section>
+  <div class="row">
+    <div data-space='0' class="col-xs-4 box">game board</div>
+    <div data-space='1' class="col-xs-4 box">game board</div>
+    <div data-space='2' class="col-xs-4 box">game board</div>
+  </div>
+  <div class="row">
+    <div data-space='3' class="col-xs-4 box">game board</div>
+    <div data-space='4' class="col-xs-4 box">game board</div>
+    <div data-space='5' class="col-xs-4 box">game board</div>
+  </div>
+  <div class="row">
+    <div data-space='6' class="col-xs-4 box">game board</div>
+    <div data-space='7' class="col-xs-4 box">game board</div>
+    <div data-space='8' class="col-xs-4 box">game board</div>
+  </div>
+</body>
+
 </html>
