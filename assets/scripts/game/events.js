@@ -1,6 +1,6 @@
-const api = require('./api')
-const getFormFields = require('../../../lib/get-form-fields')
-const ui = require('./ui')
+// const api = require('./api')
+// const getFormFields = require('../../../lib/get-form-fields')
+// const ui = require('./ui')
 
 const player1 = 'X'
 const player2 = 'O'
