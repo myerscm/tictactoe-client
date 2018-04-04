@@ -4,12 +4,16 @@ const ui = require('./ui')
 
 const player1 = 'X'
 const player2 = 'O'
-const board = ['', '', '', '', '', '', '', '', '']
+let board = ['', '', '', '', '', '', '', '', '']
 let turn = ''
-const newGame = function () {
-  for (let i = 0; i < board.length; i++) {
-    board[i].innerHTML = []
-  }
+const newGame = function (event) {
+  event.preventDefault()
+  $('.game-board').show()
+  $('.box').html('')
+  board = ['', '', '', '', '', '', '', '', '']
+  turn = player2
+  $('#message').html('Player X, Begin!')
+  $('#message').css('background-color', 'white')
 }
 const setArray = function () {
   board[0] = $('#box-0').text()
@@ -34,35 +38,58 @@ const winCondition = function () {
   board[7] = $('#box-7').text()
   board[8] = $('#box-8').text()
 
-  if (board[0] !== '' && board[0] === board[1] && board[1] === board[2]) {
-    console.log('You Have Won!')
-  } else if (board[3] !== '' && board[3] === board[4] && board[3] === board[5]) {
-    console.log('You Have Won!')
-  } else if (board[6] !== '' && board[6] === board[7] && board[6] === board[8]) {
-    console.log('You Have Won!')
-  } else if (board[0] !== '' && board[0] === board[3] && board[0] === board[6]) {
-    console.log('You Have Won!')
-  } else if (board[1] !== '' && board[1] === board[4] && board[1] === board[7]) {
-    console.log('You Have Won!')
-  } else if (board[2] !== '' && board[2] === board[5] && board[2] === board[8]) {
-    console.log('You Have Won!')
-  } else if (board[0] !== '' && board[0] === board[4] && board[0] === board[8]) {
-    console.log('You Have Won!')
-  } else if (board[2] !== '' && board[2] === board[4] && board[2] === board[6]) {
-    console.log('You Have Won!')
+  if ((board[0] === 'X' && board[0] === board[1] && board[1] === board[2]) ||
+  (board[3] === 'X' && board[3] === board[4] && board[3] === board[5]) ||
+  (board[6] === 'X' && board[6] === board[7] && board[6] === board[8]) ||
+  (board[0] === 'X' && board[0] === board[3] && board[0] === board[6]) ||
+  (board[1] === 'X' && board[1] === board[4] && board[1] === board[7]) ||
+  (board[2] === 'X' && board[2] === board[5] && board[2] === board[8]) ||
+  (board[0] === 'X' && board[0] === board[4] && board[0] === board[8]) ||
+  (board[2] === 'X' && board[2] === board[4] && board[2] === board[6])) {
+    console.log('X wins')
+    $('#message').html('Player X wins!')
+    $('#message').css('background-color', 'green')
+    $('.game-board').hide()
+    return true
+  } else if ((board[0] === 'O' && board[0] === board[1] && board[1] === board[2]) ||
+(board[3] === 'O' && board[3] === board[4] && board[3] === board[5]) ||
+(board[6] === 'O' && board[6] === board[7] && board[6] === board[8]) ||
+(board[0] === 'O' && board[0] === board[3] && board[0] === board[6]) ||
+(board[1] === 'O' && board[1] === board[4] && board[1] === board[7]) ||
+(board[2] === 'O' && board[2] === board[5] && board[2] === board[8]) ||
+(board[0] === 'O' && board[0] === board[4] && board[0] === board[8]) ||
+(board[2] === 'O' && board[2] === board[4] && board[2] === board[6])) {
+    console.log('O wins')
+    $('#message').html('Player O wins!')
+    $('#message').css('background-color', 'blue')
+    $('.game-board').hide()
+    return true
+  } else if ((board[0] !== '' && board[1] !== '' && board[2] !== '' &&
+    board[3] !== '' && board[4] !== '' && board[5] !== '' && board[6] !== '' &&
+    board[7] !== '' && board[8] !== '')) {
+    console.log('Its a draw')
+    $('#message').html('Its a draw!')
+    $('#message').css('background-color', 'purple')
+    $('.game-board').hide()
   }
 }
 const turnSwitch = function (e) {
   if (e.target.innerHTML !== 'X' && e.target.innerHTML !== 'O') {
     if (turn === player1) {
       turn = player2
+      $('#message').html('Turn belongs to Player X')
+      $('#message').css('background-color', 'white')
     } else {
       turn = player1
+      $('#message').html('Turn belongs to Player O')
+      $('#message').css('background-color', 'white')
     }
     e.target.innerHTML = turn
     console.log(turn)
   } else {
     console.log('Not a valid space')
+    $('#message').html('This space is taken!')
+    $('#message').css('background-color', 'red')
   }
   return turn
 }

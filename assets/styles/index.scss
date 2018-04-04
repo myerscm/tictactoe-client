@@ -3,15 +3,25 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 $black: #000;
 
+body {
+  margin: 0 auto;
+  text-align: center;
+  }
+
 .game-board {
   display: grid;
   grid-template-columns: 200px 200px 200px;
   grid-template-rows: 200px 200px 200px;
+  margin-left: 0 auto;
+  padding-bottom: 50px;
+  padding-left: 32%;
+  padding-right: 32%;
+  padding-top: 20px;
 }
 
 .box {
-  text-align: center;
   border: 1px solid $black;
   justify-content: center;
-  padding: 95px
+  padding: 95px;
+  text-align: center;
   }
